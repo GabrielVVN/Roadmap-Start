@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roadmap Start | O Caminho para o Primeiro Estágio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap');
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  body {
+    background-color: #02040a; /* Fundo externo escuro liso absoluto */
+    color: #f8fafc;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+  }
+
+  /* CONTAINER PRINCIPAL LIMPO */
+  .container {
+    max-width: 550px;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0b1120; /* Fundo interno sólido e elegante, sem textura */
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    border-left: 1px solid #1e293b;
+    border-right: 1px solid #1e293b;
+    padding-bottom: 40px;
+  }
+
+  /* CLASSES DE ANIMAÇÃO (SCROLL) */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* HEADER / HERO */
+  .hero {
+    padding: 50px 25px 30px;
+    text-align: center;
+  }
+
+  .badge-pulse {
+    display: inline-block;
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    padding: 6px 15px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    animation: glow-badge 2s infinite alternate;
+  }
+
+  @keyframes glow-badge {
+    from { box-shadow: 0 0 5px rgba(16, 185, 129, 0.1); }
+    to { box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
+  }
+
+  .main-title {
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 15px;
+  }
+
+  /* TEXTO COM GRADIENTE ANIMADO */
+  .gradient-text {
+    background: linear-gradient(270deg, #38bdf8, #818cf8, #38bdf8);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shine 3s linear infinite;
+  }
+
+  @keyframes shine {
+    to { background-position: 200% center; }
+  }
+
+  .hero p {
+    color: #94a3b8;
+    font-size: 1.05rem;
+    margin-bottom: 25px;
+  }
+
+  /* SESSÃO DE DORES (GLASSMORPHISM COM ALTO CONTRASTE) */
+  .pain-section {
+    padding: 0 25px;
+    margin-bottom: 40px;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 25px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .glass-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.4);
+  }
+
+  .glass-card p {
+    margin-bottom: 15px;
+    color: #e2e8f0; /* Texto mais claro para melhorar a leitura */
+    font-size: 0.95rem;
+  }
+  .glass-card p:last-child { margin-bottom: 0; }
+  .highlight-red { color: #f87171; font-weight: 800; }
+
+  /* MÓDULOS / CONTEÚDO */
+  .modules-section {
+    padding: 0 25px;
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 25px;
+    color: #ffffff;
+  }
+
+  .module-item {
+    background: #111827; /* Fundo limpo para o módulo */
+    border-left: 4px solid #38bdf8;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  }
+
+  .module-item h3 {
+    font-size: 1.1rem;
+    color: #38bdf8;
+    margin-bottom: 8px;
+  }
+  .module-item p { color: #cbd5e1; font-size: 0.9rem; } /* Texto clareado */
+
+  /* BÔNUS EXCLUSIVOS */
+  .bonus-section {
+    padding: 0 25px;
+    margin-bottom: 40px;
+  }
+
+  .bonus-box {
+    background: rgba(234, 179, 8, 0.08);
+    border: 1px dashed rgba(234, 179, 8, 0.5);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .bonus-box h3 {
+    color: #facc15; /* Amarelo mais vivo */
+    font-weight: 900;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .bonus-box p { font-size: 0.9rem; color: #e2e8f0; }
+
+  /* CHECKOUT & CTA */
+  .checkout-section {
+    padding: 0 25px;
+    text-align: center;
+  }
+
+  .price-wrap {
+    margin-bottom: 25px;
+    position: relative;
+  }
+
+  .price-old {
+    color: #64748b;
+    font-size: 1.1rem;
+    text-decoration: line-through;
+    font-weight: 600;
+  }
+
+  .price-new {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #10b981;
+    line-height: 1;
+    text-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+  }
+  .price-new span { font-size: 1.5rem; vertical-align: top; }
+
+  .cta-btn {
+    display: block;
+    width: 100%;
+    background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: bounce-btn 2s infinite;
+  }
+
+  @keyframes bounce-btn {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+  }
+
+  .cta-btn::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 50%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: light-sweep 3s infinite;
+  }
+
+  @keyframes light-sweep {
+    100% { left: 200%; }
+  }
+
+  .secure-checkout {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  /* SETA ANIMADA DESCENDO */
+  .scroll-arrow {
+    font-size: 2rem;
+    color: #38bdf8;
+    margin: 20px auto 0;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  
+  <!-- HERO -->
+  <div class="hero animate-on-scroll">
+    <div class="badge-pulse">🟢 Liberação Automática via Pix</div>
+    <h1 class="main-title">O Fim do <span class="gradient-text">"Tutorial Hell"</span></h1>
+    <p>O roteiro validado para você dominar uma stack, construir um portfólio impossível de ser ignorado e garantir seu <strong>primeiro estágio em TI</strong> em tempo recorde.</p>
+    <div class="scroll-arrow">⬇</div>
+  </div>
+
+  <!-- A DOR (GLASSMORPHISM) -->
+  <div class="pain-section animate-on-scroll">
+    <div class="glass-card">
+      <p>Você já sentiu que está estudando 10 linguagens diferentes, mas não consegue montar <strong>nenhum projeto do zero</strong>?</p>
+      <p>Acha que precisa de mais um curso interminável para finalmente se sentir pronto, enquanto vê pessoas com menos conhecimento <span class="highlight-red">roubando as vagas de estágio</span> que deveriam ser suas?</p>
+      <p>O problema não é o seu esforço. É a falta de um mapa.</p>
+    </div>
+  </div>
+
+  <!-- O PRODUTO -->
+  <div class="modules-section animate-on-scroll">
+    <h2 class="section-title">O que você vai desbloquear:</h2>
+    
+    <div class="module-item">
+      <h3>🚀 O Roteiro de 6 Meses</h3>
+      <p>O passo a passo exato. Saiba o que focar no Mês 1 e 2 (Python, Flask, SQLite) para ter resultados 10x mais rápidos que na faculdade.</p>
+    </div>
+
+    <div class="module-item">
+      <h3>💻 Portfólio Magnético</h3>
+      <p>Abandone a "Calculadora". Descubra como estruturar projetos que resolvem problemas reais (como sistemas financeiros) e deixam os recrutadores de queixo caído.</p>
+    </div>
+
+    <div class="module-item">
+      <h3>🎯 Hackeando o LinkedIn</h3>
+      <p>Estratégias agressivas e elegantes para sair da fila interminável da Gupy e abordar profissionais da área diretamente.</p>
+    </div>
+  </div>
+
+  <!-- BÔNUS -->
+  <div class="bonus-section animate-on-scroll">
+    <div class="bonus-box">
+      <h3>🎁 BÔNUS EXCLUSIVO INCLUSO</h3>
+      <p><strong>Templates "Copia e Cola" de Networking:</strong> Mensagens prontas e validadas para você abordar recrutadores e pedir indicações a coordenadores sem parecer desesperado. <em>(Vendido separadamente por R$ 29,90, hoje de graça para você).</em></p>
+    </div>
+  </div>
+
+  <!-- CHECKOUT CTA -->
+  <div class="checkout-section animate-on-scroll">
+    <p style="color: #e2e8f0; margin-bottom: 10px; font-size: 0.95rem;">Todo esse mapa por menos que um lanche no fim de semana.</p>
+    
+    <div class="price-wrap">
+      <div class="price-old">De R$ 49,90 por apenas</div>
+      <div class="price-new"><span>R$</span>9,99</div>
+    </div>
+
+    <!-- SUBSTITUA O LINK ABAIXO PELO SEU CHECKOUT CAKTO -->
+    <a href="https://pay.cakto.com.br/SEU_LINK_AQUI" class="cta-btn" id="buyBtn">
+      QUERO GARANTIR MEU ACESSO
+    </a>
+
+    <div class="secure-checkout">
+      🔒 Ambiente 100% Seguro • Acesse pelo celular ou PC
+    </div>
+  </div>
+
+</div>
+
+<!-- SCRIPT PARA AS ANIMAÇÕES DE SCROLL APARECEREM -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    const hiddenElements = document.querySelectorAll('.animate-on-scroll');
+    hiddenElements.forEach((el) => observer.observe(el));
+
+    // Alerta de link provisório
+    document.getElementById('buyBtn').addEventListener('click', function(e) {
+      if(this.getAttribute('href') === 'https://pay.cakto.com.br/SEU_LINK_AQUI') {
+        e.preventDefault();
+        alert('Lembrete: Troque a URL do botão pelo seu link oficial da Cakto antes de publicar no GitHub!');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
