@@ -15,7 +15,7 @@
   }
 
   body {
-    background-color: #02040a; /* Fundo externo escuro liso absoluto */
+    background-color: #02040a;
     color: #f8fafc;
     line-height: 1.6;
     display: flex;
@@ -28,7 +28,7 @@
     max-width: 550px;
     width: 100%;
     min-height: 100vh;
-    background-color: #0b1120; /* Fundo interno sólido e elegante, sem textura */
+    background-color: #0b1120;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
     border-left: 1px solid #1e293b;
     border-right: 1px solid #1e293b;
@@ -123,7 +123,7 @@
 
   .glass-card p {
     margin-bottom: 15px;
-    color: #e2e8f0; /* Texto mais claro para melhorar a leitura */
+    color: #e2e8f0;
     font-size: 0.95rem;
   }
   .glass-card p:last-child { margin-bottom: 0; }
@@ -144,7 +144,7 @@
   }
 
   .module-item {
-    background: #111827; /* Fundo limpo para o módulo */
+    background: #111827;
     border-left: 4px solid #38bdf8;
     padding: 20px;
     border-radius: 8px;
@@ -159,7 +159,7 @@
     color: #38bdf8;
     margin-bottom: 8px;
   }
-  .module-item p { color: #cbd5e1; font-size: 0.9rem; } /* Texto clareado */
+  .module-item p { color: #cbd5e1; font-size: 0.9rem; }
 
   /* BÔNUS EXCLUSIVOS */
   .bonus-section {
@@ -176,7 +176,7 @@
   }
 
   .bonus-box h3 {
-    color: #facc15; /* Amarelo mais vivo */
+    color: #facc15;
     font-weight: 900;
     margin-bottom: 10px;
     display: flex;
@@ -333,8 +333,8 @@
       <div class="price-new"><span>R$</span>9,99</div>
     </div>
 
-    <!-- SUBSTITUA O LINK ABAIXO PELO SEU CHECKOUT CAKTO -->
-    <a href="https://pay.cakto.com.br/378ijaj_952174" class="cta-btn" id="buyBtn">
+    <!-- BOTÃO COM O LINK OFICIAL DA CAKTO -->
+    <a href="https://pay.cakto.com.br/378ijaj_952174" target="_blank" class="cta-btn" id="buyBtn">
       QUERO GARANTIR MEU ACESSO
     </a>
 
@@ -358,14 +358,6 @@
 
     const hiddenElements = document.querySelectorAll('.animate-on-scroll');
     hiddenElements.forEach((el) => observer.observe(el));
-
-    // Alerta de link provisório
-    document.getElementById('buyBtn').addEventListener('click', function(e) {
-      if(this.getAttribute('href') === 'https://pay.cakto.com.br/378ijaj_952174') {
-        e.preventDefault();
-        alert('Lembrete: Troque a URL do botão pelo seu link oficial da Cakto antes de publicar no GitHub!');
-      }
-    });
   });
 </script>
 
